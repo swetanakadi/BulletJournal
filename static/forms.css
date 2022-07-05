@@ -1,0 +1,269 @@
+body{
+    margin: 0%;
+    padding: 0%;
+}
+.form-container{
+    margin-bottom: 0%;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    padding-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-card{
+background-color: #ffb20a;
+width: 700px;
+height:500px;
+padding-top: 30px;
+padding-left: 30px;
+margin-top: 5px;
+border-radius: 10px;
+box-shadow: inset 10px 10px #8888;
+}
+
+.heading{
+    margin-top: -100px;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Satisfy', cursive;;
+    color: rgb(6, 32, 24);
+}
+
+.form-fields label{
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+    float: left;
+    padding-right: 15px;
+}
+
+.form-fields input{
+    font-size: 15px;
+    padding: 4px 2px;
+    border: solid 1px black;
+    width:200px;
+    margin: 2px 0 20px 10px;
+}
+
+button{
+    width: 100px;
+    background-color: rgb(49, 3, 24);
+    height: 30px;
+    border-radius: 10px;
+    color: aquamarine;
+    font-size: 15px;
+}
+
+p{
+    background-color: antiquewhite;
+    color: rgb(7, 7, 34);
+}
+
+.form-card a{
+    font-size: 20px;
+}
+.form-card a:hover{
+    font-size: 20px;
+    color: rgb(153, 5, 5);
+}
+
+h4{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.login-card{
+    width: 600px;
+    height: 400px;
+    background-color: rgb(10, 126, 120);
+    margin-top: -100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.login-card label{
+    font-size: 20px;
+    padding-bottom: 50px;
+}
+
+.login-card input,
+button, select{
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.login-card p{
+    background-color: rgb(10, 126, 120);;
+    font-size: medium;
+}
+
+.login-card a{
+    font-size: 20px;
+    color: chartreuse;
+}
+.login-card a:hover{
+    font-size: 20px;
+    color: rgb(153, 5, 5);
+}
+
+.messages{
+    color: rgb(125, 250, 8);
+    font-weight: bold;
+    font-family: monospace;
+    padding-left: 5px;
+}
+
+#task-heading{
+    padding-left: 5px;
+    font-size: 15px;
+    color:rgb(116, 10, 10)
+}
+
+.checklist-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.logout a{
+    text-decoration: none;
+    color:rgb(230, 15, 15);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+@media screen and (max-width:300px){
+    .form-container{
+        margin-bottom: 0%;
+        width: 100%;
+        height: 500px;
+        background-color: white;
+        padding-top: 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .form-card{
+        background-color: #ffb20a;
+        width: 250px;
+        height:430px;
+        padding-top: 30px;
+        padding-left: 10px;
+        margin-top: 5px;
+        border-radius: 10px;
+        box-shadow: inset 5px 5px #8888;
+        }
+    .heading{
+        margin-top: -20px;
+        text-align: center;
+        font-size: 10px;
+        font-family: 'Satisfy', cursive;;
+        color: rgb(6, 32, 24);
+    }
+
+    .form-fields label{
+        display: block;
+        font-size: 12px;
+        font-weight: bold;
+        text-align: right;
+        float: left;
+        padding-right: 15px;
+    }
+    
+    .form-fields input{
+        font-size: 10px;
+    }
+
+    button{
+        width: 80px;
+        background-color: rgb(49, 3, 24);
+        height: 25px;
+        border-radius: 10px;
+        color: aquamarine;
+        font-size: 10px;
+    }
+
+    .form-card a{
+        font-size: 10px;
+    }
+    .form-card a:hover{
+        font-size: 10px;
+        color: rgb(153, 5, 5);
+    }
+
+    h4{
+        font-size: 10px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    .login-card{
+        width: 250px;
+        height: 250px;
+        background-color: rgb(10, 126, 120);
+        margin-top: -100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        margin-left: 15px;
+        padding-top: 20px;
+        
+    }
+
+    .login-card label{
+        font-size: 15px;
+        padding-bottom: 5px;
+    }
+    
+    .login-card input,
+    button, select{
+        width: 100px;
+        height:20px;
+        border-radius: 5px;
+    }
+
+    .login-card a{
+        font-size: 15px;
+        color: chartreuse;
+    }
+    .login-card a:hover{
+        font-size: 15px;
+        color: rgb(153, 5, 5);
+    }
+
+    .messages{
+        color: rgb(125, 250, 8);
+        font-weight: bold;
+        font-family: monospace;
+        padding-left: 5px;
+        font-size: 10px;
+    }
+    
+    #task-heading{
+        padding-left: 5px;
+        font-size: 10px;
+        color:rgb(116, 10, 10)
+    }
+
+    .checklist-container{
+        margin-top: -50px;
+    }
+    .checklist-container textarea{
+        width: 150px;
+        height: 100px;
+    }
+
+}

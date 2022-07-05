@@ -1,0 +1,46 @@
+{% extends 'main.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+    {% block content %}
+    <div class="intro">
+        <h1>Your one stop for an organized way of life!</h1>
+
+        <p>Lagging behind every schedule? Now its easy with the bullet journal to organize every mess and 
+            spend more time on more important <br> and beloved work! And the best part, it's <b>free!!!!</b> <br>
+            So why wait, get started
+        </p>
+
+        <a href="{% url 'register' %}">REGISTER</a>
+    </div>
+
+
+    <div class="features">
+        <h3> FEATURES <br> <br>
+            You'll benefit with the following things....
+        </h3>
+        
+        <div class="list">
+            <ul>
+                
+                <li> Customizable to Your Needs and Budget </li>
+                <li> Promote Organization </li>
+                <li> Keeps Everything Where You Can See It </li>
+                <li> Improve Productivity </li>
+                <li> It's Great for Keeping Lists </li>
+            </ul>
+        </div>
+    </div>
+    {% endblock content %}
+
+</body>
+</html>

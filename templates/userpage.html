@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'userpage.css' %}">
+    {% endblock %}
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Berkshire+Swash&family=Permanent+Marker&family=Satisfy&family=Trispace&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    <div class="logout"> <a href="{% url 'logout' %}"> &larr; </a></div>
+    <div class="parent"> 
+        <h2> Welcome {{ name }}!</h2>
+        <hr>
+        <div class="userlinks"> 
+            <ul>
+                <li> <a href="{% url 'createTasks' %}"> Create Task List </a></li> <br>
+                <li> <a href="{% url 'createCheckList' %}"> A Check On Yourself </a></li> <br>
+                <li> <a href="{% url 'todayslist' %}"> See Today's List </a></li> <br>
+                <li> <a href="{% url 'weeks_report' %}"> Your Week At A Glance </a></li> <br>
+                <li> <a href="{% url 'months_report' %}"> Your Month At A Glance </a></li> <br>
+            </ul>
+        </div>
+        <!-- just style below -->
+        <div class="messages">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        </div>
+    </div>
+    {% endblock content %}
+</body>
+</html>

@@ -1,0 +1,91 @@
+.parent{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logout{
+    text-align: left;
+    float: left;
+    font-size: 60px;
+    font-weight: bold;    
+}
+
+.logout a{
+    text-decoration: none;
+    color:rgb(230, 15, 15);
+}
+
+.parent h2{
+    color:rgb(187, 14, 72);
+    font-size: 30px;
+    font-family: 'Acme', sans-serif;
+    margin-top: -50px;
+}
+
+.userlinks{
+    margin-top: -150px;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.userlinks a{
+    color: rgb(17, 57, 235);
+}
+.userlinks a:hover{
+    color: rgb(10, 70, 10);
+}
+
+.messages{
+    color: rgb(125, 250, 8);
+    font-weight: bold;
+    font-family: monospace;
+    padding-left: 5px;
+}
+
+
+@media screen and (max-width:300px){
+    .logout{
+        text-align: left;
+        float: left;
+        font-size: 30px;
+        font-weight: bold;    
+    }
+    
+    .logout a{
+        text-decoration: none;
+        color:rgb(230, 15, 15);
+    }
+
+    .parent h2{
+        color:rgb(187, 14, 72);
+        font-size: 15px;
+        font-family: 'Acme', sans-serif;
+        margin-top: -100px;
+    }
+
+    .userlinks{
+        margin-top: -200px;
+        width: 100%;
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .messages{
+        color: rgb(125, 250, 8);
+        font-weight: bold;
+        font-family: monospace;
+        padding-left: 5px;
+        font-size: 10px;
+    }
+}

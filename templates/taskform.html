@@ -1,0 +1,42 @@
+{% extends 'main.html' %}
+{% load static %}
+<!-- Styling done -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'forms.css' %}">
+    {% endblock %}
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    <div class="logout"> <a href="{% url 'userpage' %}"> &larr; </a></div>
+    <div class="form-container">
+        <div class="login-card">
+            <form method="POST" action="">
+                {% csrf_token %}
+                
+                <table>
+                    <th id="task-heading">CREATE YOUR TASKS WITH TITLE AND PRIORITY!</th>
+                {{ form.as_table }}
+                <tr>
+                    <td></td>
+                    <td><button type="submit" value="ADD">ADD</button></td>
+                </tr>
+                </table>
+                
+                <div class="messages">
+                    {% for message in messages %}
+                        {{ message }}
+                    {% endfor %}
+                </div>
+            </form>
+        </div>
+    </div>
+    {% endblock content %}
+</body>
+</html>

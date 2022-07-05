@@ -1,0 +1,104 @@
+{% extends 'main.html' %}
+{% load static %}
+<!-- styling done -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block css %}
+    ><link rel="stylesheet" href="{% static 'weeks_report.css' %}">
+    {% endblock %}
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Berkshire+Swash&family=Permanent+Marker&family=Satisfy&family=Trispace&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    <h3> IN WEEKS REPORT! </h3>
+    <!-- {{output_todo_dict}} 
+    Styling needed for this page -->
+
+    <section class="grid-container">
+        {% for key, value in output_todo_dict.items %}
+            {{safe}}
+            {% if value == 0 and value <= 20 %}
+            <div class="no-tasks" style="background: linear-gradient(0deg, rgb(134, 221, 134), white);
+            color: black;">
+                <h4 class="day">{{key|slice:"12:"}} </h4>
+                <p class="desc">On {{key|slice:11}} your productivity was 
+                {{value}} % </p>
+            </div>
+            {% elif value > 20 and value <= 40 %}
+            <div class="no-tasks" style="background: linear-gradient(0deg, rgb(70, 224, 70), white); color: whitesmoke;">
+                <h4 class="day">{{key|slice:"12:"}} </h4>
+                <p class="desc">On {{key|slice:11}} your productivity was 
+                {{value}} % </p>
+            </div>
+            {% elif value > 40 and value <= 60 %}
+            <div class="no-tasks" style="background: linear-gradient(0deg, rgb(32, 192, 32),white); 
+            color: black;">
+                <h4 class="day">{{key|slice:"12:"}} </h4>
+                <p class="desc">On {{key|slice:11}} your productivity was 
+                {{value}} % </p>
+            </div>
+            {% elif value > 60 and value <= 90 %}
+            <div class="no-tasks" style="background: linear-gradient(0deg, rgb(17, 133, 17), white); 
+            color: black;">
+                <h4 class="day">{{key|slice:"12:"}} </h4>
+                <p class="desc">On {{key|slice:11}} your productivity was 
+                {{value}} % </p>
+            </div>
+            {% elif value > 90 %}
+            <div class="no-tasks" style="background: linear-gradient(0deg, rgb(28, 214, 205), white); 
+            color: black;">
+                <h4 class="day">{{key|slice:"12:"}} </h4>
+                Wohooo!!!! You are a rockstar!
+                <p class="desc">On {{key|slice:11}} your productivity was 
+                {{value}} % </p>
+            </div>  
+            {% else %}
+            <div class="no-tasks" style="background:linear-gradient(0deg, rgb(228, 32, 32),white); color: black;">
+                <h4 class="day">{{key|slice:"12:"}} </h4>
+                {{value}}
+            </div>
+            {% endif %}
+        {% endfor%}
+    </section>
+
+    <section class="checklist-grid">
+        {% for key, value in output_checklist_dict.items %}
+            <div class="checklist">
+                On {{key}}, you were emotionally,
+                <div  style="background-color: rgb(196, 224, 240); color:rgb(32, 22, 7)">
+                    <p>
+                        {{ value.0 }}
+                    </p>
+                </div>    
+            </div>
+
+            <div class="checklist">
+                On {{key}}, you were physically,
+                <div  style="background-color: rgb(255, 227, 209); color:rgb(2, 4, 5)">
+                    <p>
+                        {{ value.1 }}
+                    </p>
+                </div>    
+            </div>
+
+            <div class="checklist">
+                On {{key}}, you were thankful for,
+                <div  style="background-color: rgb(224, 240, 167); color:rgb(39, 39, 8)">
+                    <p>
+                        {{ value.2 }}
+                    </p>
+                </div>    
+            </div>
+        {% endfor %}
+    </section>
+{% endblock content %}
+</body>
+
+
+</html>

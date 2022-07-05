@@ -1,0 +1,189 @@
+{% extends 'main.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'todayslist.css' %}">
+    {% endblock %}
+    <title>Document</title>
+</head>
+{% block content %}
+<body>
+    {% if records|length_is:"0" %}
+    <div class="task-container">
+        <h2>You have not created any list for today yet. </h2>
+        <a href="{% url 'userpage' %}">GO BACK</a>
+    </div>
+    {% else %}
+    <form method="POST">
+        {% csrf_token %}
+        <div class="task-container">
+            <h2>You have following tasks for today</h2>
+            {% for record in records %}
+
+            {% if record.status == 'PEN' %}
+                <div class="tasks">
+                    &#x2022; {{ record.title }}
+
+                    <div class="status">
+                            {% if record.status == 'PEN' %}
+                                <input type="radio" name="name-{{forloop.counter}}" checked value="PEN">PENDING
+                            {% else %}
+                                <input type="radio" name="name-{{forloop.counter}}" value="PEN">PENDING
+                            {% endif %}
+
+                            {% if record.status == 'MIG' %}
+                                <input type="radio" name="name-{{forloop.counter}}" checked value="MIG">MIGRATED
+                            {% else %}
+                                <input type="radio" name="name-{{forloop.counter}}" value="MIG">MIGRATED
+                            {% endif %}
+
+                            {% if record.status == 'COM' %}
+                                <input type="radio" name="name-{{forloop.counter}}" checked value="COM">COMPLETED
+                            {% else %}
+                                <input type="radio" name="name-{{forloop.counter}}" value="COM">COMPLETED
+                            {% endif %}
+                            {% if record.status == 'CAN' %}
+                                <input type="radio" name="name-{{forloop.counter}}" checked value="CAN">CANCELLED
+                            {% else %}
+                                <input type="radio" name="name-{{forloop.counter}}" value="CAN">CANCELLED
+                            {% endif %}
+                    </div>
+                </div>
+
+                {% elif record.status == 'COM' %}
+                <div class="tasks">
+                    &#x2715; {{ record.title }}
+                        <div class="status">
+                        {% if record.status == 'PEN' %}
+                            <input type="radio" name="name-{{forloop.counter}}" checked value="PEN">PENDING
+                        {% else %}
+                            <input type="radio" name="name-{{forloop.counter}}" value="PEN">PENDING
+                        {% endif %}
+
+                        {% if record.status == 'MIG' %}
+                            <input type="radio" name="name-{{forloop.counter}}" checked value="MIG">MIGRATED
+                        {% else %}
+                            <input type="radio" name="name-{{forloop.counter}}" value="MIG">MIGRATED
+                        {% endif %}
+
+                        {% if record.status == 'COM' %}
+                            <input type="radio" name="name-{{forloop.counter}}" checked value="COM">COMPLETED
+                        {% else %}
+                            <input type="radio" name="name-{{forloop.counter}}" value="COM">COMPLETED
+                        {% endif %}
+                        {% if record.status == 'CAN' %}
+                            <input type="radio" name="name-{{forloop.counter}}" checked value="CAN">CANCELLED
+                        {% else %}
+                            <input type="radio" name="name-{{forloop.counter}}" value="CAN">CANCELLED
+                        {% endif %}
+                    </div>
+                </div>
+
+                {% elif record.status == 'MIG' %}
+                <div class="tasks">
+                    &#x27A4; {{ record.title }}
+                    <div class="status">
+                        {% if record.status == 'PEN' %}
+                            <input type="radio" name="name-{{forloop.counter}}" checked value="PEN">PENDING
+                        {% else %}
+                            <input type="radio" name="name-{{forloop.counter}}" value="PEN">PENDING
+                        {% endif %}
+
+                        {% if record.status == 'MIG' %}
+                            <input type="radio" name="name-{{forloop.counter}}" checked value="MIG">MIGRATED
+                        {% else %}
+                            <input type="radio" name="name-{{forloop.counter}}" value="MIG">MIGRATED
+                        {% endif %}
+
+                        {% if record.status == 'COM' %}
+                            <input type="radio" name="name-{{forloop.counter}}" checked value="COM">COMPLETED
+                        {% else %}
+                            <input type="radio" name="name-{{forloop.counter}}" value="COM">COMPLETED
+                        {% endif %}
+                        {% if record.status == 'CAN' %}
+                            <input type="radio" name="name-{{forloop.counter}}" checked value="CAN">CANCELLED
+                        {% else %}
+                            <input type="radio" name="name-{{forloop.counter}}" value="CAN">CANCELLED
+                        {% endif %}
+                    </div>
+                </div>
+
+                {% elif record.status == 'CAN' %}
+                <div class="tasks">
+                    <s> {{ record.title }} </s>
+                    <div class="status">
+                        {% if record.status == 'PEN' %}
+                            <input type="radio" name="name-{{forloop.counter}}" checked value="PEN">PENDING
+                        {% else %}
+                            <input type="radio" name="name-{{forloop.counter}}" value="PEN">PENDING
+                        {% endif %}
+
+                        {% if record.status == 'MIG' %}
+                            <input type="radio" name="name-{{forloop.counter}}" checked value="MIG">MIGRATED
+                        {% else %}
+                            <input type="radio" name="name-{{forloop.counter}}" value="MIG">MIGRATED
+                        {% endif %}
+
+                        {% if record.status == 'COM' %}
+                            <input type="radio" name="name-{{forloop.counter}}" checked value="COM">COMPLETED
+                        {% else %}
+                            <input type="radio" name="name-{{forloop.counter}}" value="COM">COMPLETED
+                        {% endif %}
+                        {% if record.status == 'CAN' %}
+                            <input type="radio" name="name-{{forloop.counter}}" checked value="CAN">CANCELLED
+                        {% else %}
+                            <input type="radio" name="name-{{forloop.counter}}" value="CAN">CANCELLED
+                        {% endif %}
+                    </div>
+                </div>
+
+                {% endif %}
+            {% endfor %}       
+        </div>
+
+        <div class="checklist-container">
+            <h2>Your well being.....</h2>
+            <table>
+                {% for record in c_records %}
+                    <tr>
+                        <td class="table-headings">Emotional Being</td> 
+                        <td>
+                    <textarea rows="10" cols="20" name="updatedEmotionalBeing"> {{record.emotionalbeing}}
+                    </textarea>
+                    </td>
+                    </tr>
+
+                    <tr>
+                        <td class="table-headings">Physical Being</td> 
+                        <td>
+                    <textarea rows="10" cols="20" name="updatedEmotionalBeing"> {{record.emotionalbeing}}
+                    </textarea>
+                    </td>
+                    </tr>
+
+                    <tr>
+                        <td class="table-headings">Gratitudes</td> 
+                        <td>
+                    <textarea rows="10" cols="20" name="updatedEmotionalBeing"> {{record.emotionalbeing}}
+                    </textarea>
+                    </td>
+                    </tr>
+
+                {% endfor %}
+
+                <tr>
+                    <td></td>
+                    <td><button type="submit" value="UPDATE">UPDATE</button></td>
+                </tr>
+            </table> 
+        </div>
+    </form>
+    {% endif %}
+</body>
+{% endblock content %}
+</html>

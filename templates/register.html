@@ -1,0 +1,43 @@
+{% extends 'main.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Registration's styling done -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block css %}
+    <link rel="stylesheet" type="text/css" href=" {% static 'forms.css' %}">
+    {% endblock %}
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Satisfy&family=Trispace&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    <div class="form-container">
+        <div class="heading">
+        <h3>Your Details Please....</h3>
+        </div>
+        
+        <div class="form-card">
+            <form method="POST" action="">
+                
+                {% csrf_token %}
+            <!-- {{ form.as_p }} -->
+                {% for field in form %}
+                <div class="form-fields">
+                    <label> {{field.label}} </label>
+                    {{field}}
+                </div>
+                {% endfor %}
+                <button type="submit" value="Submit">SUBMIT</button>  
+                <button type="clear" value="Clear">CLEAR</button>  <br>
+                <p> {{form.errors}} </p>
+                <h4> Already have an account then <a href="{% url 'login' %}"> LOGIN</a> instead. </h4>
+            </form>
+        </div>
+    </div>
+    {% endblock content %}
+</body>
+</html>

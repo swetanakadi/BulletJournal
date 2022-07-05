@@ -1,0 +1,122 @@
+.task-container{
+    padding-top: 100px;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -100px;
+}
+
+.tasks{
+    width:50%;
+    height:10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(90, 241, 52);
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+.checklist-container{
+    width:100%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.table-headings{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color:rgb(79, 14, 85)
+}
+
+.checklist-container button{
+    width: 164px;
+    background-color: rgb(49, 3, 24);
+    height: 30px;
+    border-radius: 10px;
+    color: aquamarine;
+    font-size: 15px;
+}
+
+@media screen and (max-width:300px){
+    .task-container{
+        padding-top: 100px;
+        width: 100%;
+        height: 150vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: -100px;
+    }
+
+    .task-container h2{
+        font-size: 15px;
+    }
+
+    .tasks{
+        width: 50%;
+        height:30vh;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(90, 241, 52);
+        border: 3px solid black;
+        border-radius: 5px;
+        font-size: 10px;
+    }
+    .status{
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: center;
+    }
+     .status radio{
+        display: flex;
+        flex-direction: column;
+        font-size: 10px;
+        align-items: left;
+    } 
+
+    .checklist-container{
+        width:100%;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .checklist-container textarea{
+        width: 80px;
+        height: 60px;
+    }
+    
+    
+    .table-headings{
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color:rgb(79, 14, 85)
+    }
+    
+    .checklist-container button{
+        width: 80px;
+        background-color: rgb(49, 3, 24);
+        height: 20px;
+        border-radius: 5px;
+        color: aquamarine;
+        font-size: 10px;
+    }
+}
